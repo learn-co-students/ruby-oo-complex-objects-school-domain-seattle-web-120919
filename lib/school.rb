@@ -31,14 +31,14 @@ class School
 
     def sort
         # iterate through HoA @roster key/value pair and sorting values alphabetically
-        # hash = {}
+        # hash = {}  ## set to hash if iterate with .each (bc sort returns array) 
+        # @roster.each {|key, value| value.sort}
+        # hash 
+        
         @roster.map {|key, value| 
             # hash[key] = value.sort
             [key, value.sort] }.to_h
-        # hash 
-
-    end 
-
+    end
 end
 
 # school = School.new("Bayside High School")
