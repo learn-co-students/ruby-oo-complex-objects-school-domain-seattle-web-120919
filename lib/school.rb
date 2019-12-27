@@ -20,7 +20,7 @@ def grade(grade)
 end 
 
 def sort
-    @roster.each_value { |v| v.sort! }
+    self.roster.each_value { |v| v.sort! }
 
     #or can use @roster.each { |k,v| v.sort! }
 end 
