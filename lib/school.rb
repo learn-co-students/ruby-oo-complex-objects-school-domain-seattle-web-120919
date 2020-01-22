@@ -1,28 +1,24 @@
 class School
+  attr_reader :name, :roster
 
-attr_reader :name, :roster
-
-def initialize(name)
-    @name = name #instance variable
+  def initialize(name)
+    @name = name
     @roster = {}
-end 
+  end
 
-def add_student(name, grade)
-    if @roster.has_key?(grade) 
-        @roster[grade] << name 
-    else 
-        @roster[grade] = [name]
-    end 
-end 
+  def add_student(name, grade)
+    if @roster[grade]
+      @roster[grade] << name
+    else
+      @roster[grade] = [name]
+    end
+  end
 
-def grade(grade)
+  def grade(grade)
     @roster[grade]
-end 
+  end
 
-def sort
-    self.roster.each_value { |v| v.sort! }
-
-    #or can use self.roster.each { |k,v| v.sort! } or could use @roster instead of self.roster but self.roster is better to use. 
-end 
-
-end 
+  def sort
+    @roster.each { |k, v| v.sort! }
+  end
+end
